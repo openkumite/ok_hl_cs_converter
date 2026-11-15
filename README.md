@@ -113,6 +113,12 @@ cs_levels force_stage assets 40 0 CS_ASSAULT    # stage 6: cs_assault, BACKSTREE
 folder's manifest: change both. `sh check.sh` runs formatting, clippy, the tests and `cargo deny`; the git hooks
 and CI run it.
 
+## Releases
+
+A tag `vX.Y.Z` (Cargo.toml's version; only organisation admins push `v*` tags) publishes a release: `cs_levels` for
+Linux (amd64, arm64), Windows and macOS (universal), with SHA256SUMS (`.github/workflows/release.yml`). `main` takes
+pull requests only, its CI passing; Dependabot opens one grouped pull request a week.
+
 ## License
 
 MIT ([LICENSE](LICENSE)). The repository contains no data from Counter-Strike or Half-Life.
