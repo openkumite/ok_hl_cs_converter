@@ -1,0 +1,37 @@
+[package]
+name = "ok_hl_cs_converter"
+version = "0.1.0"
+edition = "2024"
+description = "Converts the levels of your own Counter-Strike game (Half-Life) into a pack of arenas OpenKumite plays beside Tekken 3's"
+license = "MIT"
+publish = false
+
+[lib]
+path = "src/lib.rs"
+
+[[bin]]
+# the developer tool: one level at a time (README.md)
+name = "cs_levels"
+path = "src/main.rs"
+
+[dependencies]
+ok_converter_common = { path = "../ok_converter_common", default-features = false }
+anyhow = "1"
+serde_json = { version = "1", features = ["preserve_order", "float_roundtrip"] }
+png = "0.18"
+# pinned: an update could change the output bits (the fingerprint)
+libm = "=0.2.16"
+sha2 = "0.10"
+
+[dev-dependencies]
+cargo-husky = { version = "1.5.0", default-features = false, features = ["user-hooks"] }
+
+[lints.clippy]
+unwrap_used = "deny"
+expect_used = "deny"
+
+[profile.release]
+debug = 1
+
+[profile.dev]
+opt-level = 2

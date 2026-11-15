@@ -1,0 +1,6 @@
+/target
+*.bsp
+*.wad
+/assets
+.DS_Store
+.claude/worktrees/
