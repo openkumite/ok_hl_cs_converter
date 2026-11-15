@@ -108,7 +108,7 @@ cs_levels force_stage assets 40 0 CS_ASSAULT    # stage 6: cs_assault, BACKSTREE
 
 ## Repository and checks
 
-`src/` (`src/main.rs`: `cs_levels`); it depends on [ok_converter_common](../ok_converter_common) (`io` only).
+`src/` (`src/main.rs`: `cs_levels`); it depends on [ok_converter_common](https://github.com/openkumite/ok_converter_common) (`io` only).
 `src/fingerprint.rs` is a copy of ok_tekken3_converter's (`convert_all`'s), for the commands above that refresh a
 folder's manifest: change both. `sh check.sh` runs formatting, clippy, the tests and `cargo deny`; the git hooks
 and CI run it.
